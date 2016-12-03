@@ -11,6 +11,10 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel='stylesheet' type="text/css" href='style.css'>
+	<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
 </head>
 <body>
  <nav id="menu">
@@ -26,7 +30,13 @@
 
     
 <div class="wrapper" id="panel">
-	<button class="toggle-button">☰</button>
+	<div class="toggle-button">
+		<div id="nav-icon1">
+	  		<span></span>
+	  		<span></span>
+	  		<span></span>
+		</div>
+	</div>
 	<section class="section section--menu" id="Luce">
 			<nav class="menu menu--luce">
 				<ul class="menu__list">
@@ -36,7 +46,8 @@
 				</ul>
 			</nav>
 	</section>
-	
+
+
 
 <div class="big-block"></div>
 </div>
@@ -99,6 +110,7 @@
 		});
 	})(window);
 </script>
+<script src="./js/menusvg.js"></script>
 
 </body>
 </html>
