@@ -1,11 +1,104 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel='stylesheet' href='./css/reset.css'>
-	<link rel='stylesheet' href='style.css'>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Anton Kolesnykov</title>
+	<meta name="description" content="An open collection of menu styles that use the line as a creative design element" />
+	<meta name="keywords" content="web design, styles, inspiration, line, pseudo-element, SVG, animation" />
+	<link rel='stylesheet' type="text/css" href='./css/reset.css'>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel='stylesheet' type="text/css" href='style.css'>
 </head>
 <body>
-<h1>Hello World</h1>
-<p>My website on GitHub Pages. It works!</p>
+ <nav id="menu">
+ <nav class="menu menu--luce">
+				<ul class="menu__list">
+					<li class="menu__item menu__item--current"><a class="menu__link">Portfolio</a></li>
+					<li class="menu__item"><a class="menu__link">Blog</a></li>
+					<li class="menu__item"><a class="menu__link">Contact</a></li>
+				</ul>
+			</nav>
+ </nav>
+
+
+    
+<div class="wrapper" id="panel">
+	<button class="toggle-button">☰</button>
+	<section class="section section--menu" id="Luce">
+			<nav class="menu menu--luce">
+				<ul class="menu__list">
+					<li class="menu__item menu__item--current"><a class="menu__link">Portfolio</a></li>
+					<li class="menu__item"><a class="menu__link">Blog</a></li>
+					<li class="menu__item"><a class="menu__link">Contact</a></li>
+				</ul>
+			</nav>
+	</section>
+	
+
+<div class="big-block"></div>
+</div>
+
+
+
+<script src="js/classie.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/slideout.min.js"></script>
+    <script>
+      var slideout = new Slideout({
+        'panel': document.getElementById('panel'),
+        'menu': document.getElementById('menu'),
+        'tolerance': 70
+      });
+
+      // Toggle button
+      document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+      });
+    </script>
+
+
+
+
+
+<script>
+	(function() {
+		[].slice.call(document.querySelectorAll('.menu')).forEach(function(menu) {
+			var menuItems = menu.querySelectorAll('.menu__link'),
+				setCurrent = function(ev) {
+					ev.preventDefault();
+
+					var item = ev.target.parentNode; // li
+
+					// return if already current
+					if (classie.has(item, 'menu__item--current')) {
+						return false;
+					}
+					// remove current
+					classie.remove(menu.querySelector('.menu__item--current'), 'menu__item--current');
+					// set current
+					classie.add(item, 'menu__item--current');
+				};
+
+			[].slice.call(menuItems).forEach(function(el) {
+				el.addEventListener('click', setCurrent);
+			});
+		});
+
+		[].slice.call(document.querySelectorAll('.link-copy')).forEach(function(link) {
+			link.setAttribute('data-clipboard-text', location.protocol + '//' + location.host + location.pathname + '#' + link.parentNode.id);
+			new Clipboard(link);
+			link.addEventListener('click', function() {
+				classie.add(link, 'link-copy--animate');
+				setTimeout(function() {
+					classie.remove(link, 'link-copy--animate');
+				}, 300);
+			});
+		});
+	})(window);
+</script>
+
 </body>
 </html>
