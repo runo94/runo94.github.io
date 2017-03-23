@@ -1,5 +1,11 @@
 $(document).ready(function(){
-  $('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+  $('#nav-icon1').click(function(){
     $(this).toggleClass('open');
   });
+});
+
+$(document).ready(function(){
+  $('.wrapper').on("swipe",function(){
+    $('#nav-icon1').toggleClass('open');
+  });                       
 });
