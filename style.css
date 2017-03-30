@@ -1,5 +1,6 @@
 body {
 	background-color: #8bd6d0;
+  font-family: 'Roboto Slab', serif;
 }
 
 .wrapper {
@@ -151,6 +152,112 @@ body {
     text-transform: none;
 }
 
+.latest_works h3 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px 0;
+  color: #f5f5f5;
+  background: #34D2AF;
+}
+
+.work {
+  width: 325px;
+  height:  250px;
+  float: left;
+  text-align: center;
+  overflow:hidden; 
+  position: relative;
+  transition: all .5s ease 0s;
+  margin: 0 auto;
+}
+
+.work:hover {
+  opacity: 1;
+}
+
+.work:hover .description_of_work .text {
+  bottom: -100px;
+}
+
+.work:hover .description_of_work span {
+  top: 0;
+}
+
+.work .description_of_work .text {
+  position: absolute;
+  bottom: 45%;
+  width: 100%;
+  z-index: 3;
+  transition: all .5s ease 0s;
+  left: 0;
+  color: #333;
+}
+
+.work .description_of_work .text p {
+  padding: 37px 0 5px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.work .description_of_work h3 {
+  position: absolute;
+  bottom: 45%;
+  width: 100%;
+  padding: 10px;
+  color: #f5f5f5;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  left: 0;
+}
+
+.work .description_of_work span {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  background: rgba(94, 210, 184, 1);;
+  padding: 10px;
+  z-index: 3;
+  text-align: center;
+  transition: all .5s ease 0s;
+}
+
+.work .description_of_work a {
+  cursor: pointer;
+  color: #fff;
+  transition: all .5s ease 0s;
+}
+
+.work .description_of_work {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  background: rgba(255,255,255, .2);
+  z-index: 2;
+  color: #fff;
+  transition: all .5s ease 0s;
+}
+
+.work:hover .description_of_work {
+  background: transparent;  
+}
+
+.work img {
+  width: 100%;
+  height: 250px;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  transition: all .5s ease 0s;
+}
+
+
+.work:hover img {
+  transform: scale(1.5,1.5);
+}
+
 @media screen and (max-width: 556px) {
   .section {
       display: none;
@@ -177,6 +284,65 @@ body {
     height: 450px;
   }
 
+}
+
+@media screen and (max-width: 649px) and (min-width: 500px) {
+  .work {
+    width: 100%;
+    height:  250px;
+    float: left;
+    position: relative;
+  }
+  .work .description_of_work {
+    display: block;
+    float: left;
+    position: relative;
+    width: calc(100% - 345px);
+  }
+
+  .work .description_of_work h3 {
+    position: relative;
+    padding: 10px;
+    color: #f5f5f5;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    bottom: initial;
+    z-index: initial;
+  }
+
+  .work:hover .description_of_work h3 {
+    bottom: initial;
+  }
+
+  .work .description_of_work span {
+    display: block;
+    position: relative;
+    top: initial;
+    z-index: initial;
+  }
+
+  .work .image {
+    float: right;
+    width: 325px;
+    z-index: initial;
+  }
+
+  .work img {
+    width: 325px;
+    height: 250px;
+    position: relative;
+    z-index: initial;
+  }
+
+  .work:hover img {
+    transform: none;
+  }
+
+  .work .description_of_work .text p {
+    padding: 0;
+    font-size: 14px;
+    background: #fff;
+  }
 }
 
 @media screen and (min-width: 557px) {
