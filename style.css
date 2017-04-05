@@ -258,6 +258,14 @@ body {
   transform: scale(1.5,1.5);
 }
 
+.work_description {
+  max-width: 325px;
+  display: block;
+  float: left;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 556px) {
   .section {
       display: none;
