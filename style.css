@@ -234,7 +234,7 @@ body {
   position: absolute;
   width: 100%;
   height: 250px;
-  background: rgba(255,255,255, .2);
+  background: rgba(255,255,255, .5);
   z-index: 2;
   color: #fff;
   transition: all .5s ease 0s;
@@ -264,6 +264,15 @@ body {
   float: left;
   padding: 20px;
   box-sizing: border-box;
+  /*background: #34D2AF;*/
+}
+
+.single_work {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  float: left;
 }
 
 @media screen and (max-width: 556px) {
