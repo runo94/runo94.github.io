@@ -16,6 +16,8 @@ img {
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 .st-medium-container {
@@ -23,6 +25,8 @@ img {
     max-width: 1140px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 .wide {
@@ -30,8 +34,24 @@ img {
     width: 100%;
 }
 
+.hide {
+    display: none;
+}
+
+.visible {
+    &-sm {
+        @media screen and (min-width: 768px) {
+            display: block;
+        }
+    }
+}
+
 .row {
     flex-flow: row wrap;
+
+    &-reverse {
+        flex-flow: row-reverse wrap;
+    }
 }
 
 .flex-justify {
@@ -51,46 +71,111 @@ img {
 }
 
 .st-col {
+    padding: 16px;
+
+    &-12 {
+        width: 100%;
+    }
+
     &-8 {
-        @extend .st-col;
-        max-width: 66.666667%;
-        box-sizing: border-box;
+        width: 66.666667%;
+        max-width: 512px;
     }
 
 
     &-7 {
-        @extend .st-col;
-        max-width: 58%;
-        box-sizing: border-box;
+        width: 58%;
         max-width: 812px;
     }
 
     &-6 {
-        @extend .st-col;
         width: 50%;
         max-width: 660px;
-        box-sizing: border-box;
     }
 
     &-5 {
-        @extend .st-col;
         width: 41, 666667%;
         max-width: 584px;
-        box-sizing: border-box;
     }
 
     &-4 {
-        @extend .st-col;
         width: 33, 3333%;
         max-width: 350px;
-        box-sizing: border-box;
     }
 
     &-3 {
-        @extend .st-col;
         width: 25%;
         max-width: 350px;
-        box-sizing: border-box;
+    }
+
+
+    &-sm {
+        @media screen and (min-width: 768px) {
+            &-8 {
+                max-width: 66.666667%;
+                max-width: 512px;
+            }
+
+
+            &-7 {
+                max-width: 58%;
+                max-width: 812px;
+            }
+
+            &-6 {
+                width: 50%;
+                max-width: 660px;
+            }
+
+            &-5 {
+                width: 41.666667%;
+                max-width: 584px;
+            }
+
+            &-4 {
+                width: 33.3333%;
+            }
+
+            &-3 {
+                width: 25%;
+                max-width: 350px;
+            }
+        }
+    }
+
+
+    &-md {
+        @media screen and (min-width: 1024px) {
+            &-8 {
+                max-width: 66.666667%;
+                max-width: 512px;
+            }
+
+
+            &-7 {
+                max-width: 58%;
+                max-width: 812px;
+            }
+
+            &-6 {
+                width: 50%;
+                max-width: 660px;
+            }
+
+            &-5 {
+                width: 41.666667%;
+                max-width: 584px;
+            }
+
+            &-4 {
+                width: 33.3333%;
+            }
+
+            &-3 {
+                width: 25%;
+                max-width: 350px;
+            }
+        }
     }
 }
 
@@ -122,15 +207,23 @@ img {
 
 h1 {
     font-family: 'Nunito', sans-serif;
-    font-size: 6rem;
+    font-size: 2.8rem;
     font-weight: 700;
     color: $white-text-color;
+
+    @media screen and (min-width: 768px) {
+        font-size: 6rem;
+    }
 }
 
 h2 {
     font-family: 'Nunito', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
+
+    @media screen and (min-width: 768px) {
+        font-size: 3rem;
+    }
 }
 
 h3 {
@@ -281,10 +374,6 @@ p {
     .work-item {
         margin: 0px 0 100px;
 
-        .st-col {
-            padding: 16px;
-        }
-
         .information-block {
             h3 {
                 color: $dark-text-color;
@@ -321,39 +410,66 @@ p {
         }
 
         .preview-block {
-            img {
-                border-top-right-radius: 64px;
-                border-bottom-left-radius: 64px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+
+            border-top-right-radius: 64px;
+            border-bottom-left-radius: 64px;
+            padding: 0;
+
+            transition: all ease .2s;
+
+            &:hover {
+                border-bottom-right-radius: 64px;
+                border-top-left-radius: 64px;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 0;
+                cursor: pointer;
+
+                transition: all ease .2s;
+
+                &::before {
+                    content: 'preview';
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    height: -webkit-fill-available;
+                    width: 100%;
+
+                    font-family: "Nunito", sans-serif;
+                    text-transform: capitalize;
+                    font-weight: 800;
+                    font-size: 1.8rem;
+                    color: $white-text-color;
+
+                    background: rgba(0, 0, 0, .6);
+
+                    transition: all ease .2s;
+                }
+            }
+
+            &.reverse-radius {
+                border-bottom-right-radius: 64px;
+                border-top-left-radius: 64px;
+                border-top-right-radius: 0;
+                border-bottom-left-radius: 0;
                 transition: all ease .2s;
 
                 &:hover {
-                    border-bottom-right-radius: 64px;
-                    border-top-left-radius: 64px;
-                    border-top-right-radius: 0;
-                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 64px;
+                    border-bottom-left-radius: 64px;
                     cursor: pointer;
 
                     transition: all ease .2s;
                 }
-
-                &.reverse-radius {
-                    border-bottom-right-radius: 64px;
-                    border-top-left-radius: 64px;
-                    border-top-right-radius: 0;
-                    border-bottom-left-radius: 0;
-                    transition: all ease .2s;
-
-                    &:hover {
-                        border-bottom-right-radius: 0;
-                        border-top-left-radius: 0;
-                        border-top-right-radius: 64px;
-                        border-bottom-left-radius: 64px;
-                        cursor: pointer;
-
-                        transition: all ease .2s;
-                    }
-                }
             }
+
         }
 
     }
