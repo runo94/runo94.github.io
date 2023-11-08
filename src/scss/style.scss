@@ -179,6 +179,13 @@ img {
     }
 }
 
+.mobile-revert {
+
+    @media screen and (max-width: 768px) {
+        flex-flow: column-reverse wrap;
+    }
+}
+
 .dark-bg {
     background-color: $dark-color;
 }
@@ -289,10 +296,15 @@ p {
         }
     }
 
+    &-centered {
+        margin: 40px auto;
+    }
+
     &:hover {
         transform: scale(1.1);
         transition: all ease .2s;
     }
+    
 }
 
 .my-potrfolio-header {
