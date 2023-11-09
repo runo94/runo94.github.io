@@ -72,6 +72,7 @@ img {
 
 .st-col {
     padding: 16px;
+    box-sizing: border-box;
 
     &-12 {
         width: 100%;
@@ -110,15 +111,21 @@ img {
 
 
     &-sm {
+
         @media screen and (min-width: 768px) {
+            &-12 {
+                width: 100%;
+                max-width: 100vw;
+            }
+
             &-8 {
-                max-width: 66.666667%;
+                width: 66.666667%;
                 max-width: 512px;
             }
 
 
             &-7 {
-                max-width: 58%;
+                width: 58%;
                 max-width: 812px;
             }
 
@@ -143,9 +150,8 @@ img {
         }
     }
 
-
-    &-md {
-        @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1024px) {
+        &-md {
             &-8 {
                 max-width: 66.666667%;
                 max-width: 512px;
@@ -179,9 +185,8 @@ img {
     }
 }
 
-.mobile-revert {
-
-    @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+    .mobile-revert {
         flex-flow: column-reverse wrap;
     }
 }
@@ -304,7 +309,7 @@ p {
         transform: scale(1.1);
         transition: all ease .2s;
     }
-    
+
 }
 
 .my-potrfolio-header {
@@ -384,6 +389,7 @@ p {
     }
 
     .work-item {
+        display: flex;
         margin: 0px 0 100px;
 
         .information-block {
