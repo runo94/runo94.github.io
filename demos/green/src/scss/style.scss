@@ -3,10 +3,9 @@ $accent: #2FB95D;
 $accentsec: #043A3A;
 
 
-html, body {
-    @media screen and (max-width: 580px) {
-        overflow-x: hidden;
-    }
+html,
+body {
+    overflow-x: hidden;
 }
 
 .st-btn {
@@ -204,6 +203,7 @@ header {
         ul {
             display: flex;
             justify-content: center;
+            margin-bottom: 0;
 
             li {
                 margin: 0 16px;

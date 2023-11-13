@@ -1,7 +1,6 @@
-@media screen and (max-width: 580px) {
-  html, body {
-    overflow-x: hidden;
-  }
+html,
+body {
+  overflow-x: hidden;
 }
 
 .st-btn, .st-btn-white, .st-btn-accent-2, .st-btn-accent {
@@ -236,6 +235,7 @@ header .navigation ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin-bottom: 0;
 }
 header .navigation ul li {
   margin: 0 16px;

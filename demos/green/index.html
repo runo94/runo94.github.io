@@ -8,6 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="../../src/css/reset.css">
     <link rel='stylesheet' type='text/css' media='screen' href='./src/css/bootstrap-grid.min.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./src/css/bootstrap.min.css'>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,28 +22,40 @@
         href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
         rel="stylesheet">
 
+
+    <link rel="stylesheet" href="./src/css/animate.css">
+
     <link rel='stylesheet' type='text/css' media='screen' href='./src/css/style.css'>
 </head>
 
 <body>
-    <header>
+    <header class="navbar navbar-expand-lg">
         <div class="container">
-            <div class="row d-flex align-items-center justify-content-between">
-                <div class="logo col-3">
+            <div class="w-100 d-flex align-items-center justify-content-between">
+                <div class="navbar-brand logo col-3">
                     <img src="./src/images/logo.svg" />
                 </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <nav class="navigation col-7">
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About Us</a></li>
-                        <li><a href="">Our service</a></li>
-                        <li><a href="">Blog</a></li>
-                    </ul>
-                </nav>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <nav class="navigation col-12 collapse d-flex navbar-collapsec align-items-center"
+                        id="navbarNavDropdown">
+                        <ul class="col-8">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Our service</a></li>
+                            <li><a href="">Blog</a></li>
+                        </ul>
 
-                <div class="col-2 d-flex align-items-center justify-content-end">
-                    <a href="#" class="st-btn-accent login-btn">Login</a>
+                        <div class="col-4 d-flex align-items-center justify-content-end">
+                            <a href="#" class="st-btn-accent login-btn">Login</a>
+                        </div>
+                    </nav>
+
                 </div>
             </div>
         </div>
@@ -50,10 +63,10 @@
 
     <section class="first-section container-fluid g-0">
         <div class="row row-cols-lg-2 row-cols-md-1 g-0 align-items-center">
-            <div class="left-side col">
+            <div class="wow slideInLeft left-side col">
                 <img src="./src/images/bansai.png" />
             </div>
-            <div class="right-side container-sm col px-md-5">
+            <div class="wow slideInRight right-side container-sm col px-md-5">
                 <div class="container-sm">
                     <h1>
                         Crafting <span>Green</span> Masterpieces
@@ -91,7 +104,7 @@
         </div>
     </section>
 
-    <section class="second-section container">
+    <section class="second-section container wow zoomIn">
         <h2>
             Landscape Design <span>Beyond Expectations</span>
         </h2>
@@ -105,19 +118,19 @@
             <img src="./src/images/house.png" />
             <div class="row row-cols-md-4 row-cols-2 info g-0  align-items-center">
                 <div class="col justify-content-center stat-item">
-                    <h3>13<span>+</span></h3>
+                    <h3><label>13</label><span>+</span></h3>
                     <p>Years Experience</p>
                 </div>
                 <div class="col justify-content-center stat-item">
-                    <h3>13K<span>+</span></h3>
+                    <h3><label>13</label>K<span>+</span></h3>
                     <p>Product</p>
                 </div>
                 <div class="col justify-content-center stat-item">
-                    <h3>7K<span>+</span></h3>
+                    <h3><label>7</label>K<span>+</span></h3>
                     <p>Satisfied Clients</p>
                 </div>
                 <div class="col justify-content-center stat-item">
-                    <h3>124<span>+</span></h3>
+                    <h3><label>124</label><span>+</span></h3>
                     <p>Local Team Members</p>
                 </div>
             </div>
@@ -127,7 +140,7 @@
     <section class="third-section container ">
         <div class="row row-cols-lg-2">
             <div class="col-lg-7 col left-side">
-                <div>
+                <div class="wow slideInLeft">
                     <h2>
                         Why Choose <span>Us?</span>
                     </h2>
@@ -142,7 +155,7 @@
                 </div>
 
                 <ul>
-                    <li>
+                    <li class="wow slideInLeft" data-wow-delay=".5s">
                         <h4>Sustainable Practices</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis eleifend quam, non
                             efficitur nisi mattis quis. Vivamus scelerisque orci nec erat cursus, sed facilisis
@@ -150,14 +163,14 @@
                             porttitor. Vestibulum ligula sapien, cursus sed consectetur.</p>
                         <a href="#" class="link">Read More...</a>
                     </li>
-                    <li>
+                    <li class="wow slideInLeft" data-wow-delay=".7s">
                         <h4>Licensed and Insured</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis eleifend quam, non
                             efficitur nisi mattis quis. Vivamus scelerisque orci nec erat cursus, sed facilisis velit
                             porttitor. Vestibulum ligula sapien, cursus sed consectetur.</p>
                         <a href="#" class="link">Read More...</a>
                     </li>
-                    <li>
+                    <li class="wow slideInLeft" data-wow-delay=".9s">
                         <h4>Local Knowledge</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis eleifend quam, non
                             efficitur nisi mattis quis. Vivamus scelerisque orci nec erat cursus, sed facilisis velit
@@ -173,16 +186,19 @@
     </section>
 
     <section class="forth-section container">
-        <h2>
-            Our <span>Service</span>
-        </h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. Nunc eget
-            congue ante. Vivamus ut sapien et ex volutpat tincidunt eget at felis vivamus hendrerit.
-        </p>
+        <div class="wow zoomIn">
+            <h2>
+                Our <span>Service</span>
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. Nunc eget
+                congue ante. Vivamus ut sapien et ex volutpat tincidunt eget at felis vivamus hendrerit.
+            </p>
+        </div>
 
         <div class="row row-cols-1 row-cols-xl-2 justify-content-around">
-            <div class="col col-xl-6  service-card d-flex justify-content-center flex-column">
+            <div class="wow slideInLeft col col-xl-6 service-card d-flex justify-content-center flex-column"
+                data-wow-delay=".5s">
                 <img src="./src/images/lawn.svg" class="card-image" />
                 <div class="d-flex justify-content-sm-between align-items-end flex-column flex-sm-row">
                     <h4>Lawn Care</h4> <a href="#" class="link">Read More...</a>
@@ -190,7 +206,8 @@
                 <p>Vestibulum ligula sapien, cursus sed consectetur nec, tincidunt ac metus. Vivamus accumsan diam eget
                     ultricies auctor. Proin iaculis metus vel condimentum tincidunt.</p>
             </div>
-            <div class="col col-xl-6 service-card d-flex justify-content-center flex-column">
+            <div class="wow slideInRight col col-xl-6 service-card d-flex justify-content-center flex-column"
+                data-wow-delay=".5s">
                 <img src="./src/images/consultation.svg" class="card-image" />
                 <div class="d-flex justify-content-sm-between align-items-end flex-column flex-sm-row">
                     <h4>Free Consultations</h4> <a href="#" class="link">Read More...</a>
@@ -198,7 +215,8 @@
                 <p>Vestibulum ligula sapien, cursus sed consectetur nec, tincidunt ac metus. Vivamus accumsan diam eget
                     ultricies auctor. Proin iaculis metus vel condimentum tincidunt.</p>
             </div>
-            <div class="col col-xl-6 service-card d-flex justify-content-center flex-column">
+            <div class="wow slideInLeft col col-xl-6 service-card d-flex justify-content-center flex-column"
+                data-wow-delay=".7s">
                 <img src="./src/images/irrigation.svg" class="card-image" />
                 <div class="d-flex justify-content-sm-between align-items-end flex-column flex-sm-row">
                     <h4>Irrigation Systems</h4> <a href="#" class="link">Read More...</a>
@@ -206,7 +224,8 @@
                 <p>Vestibulum ligula sapien, cursus sed consectetur nec, tincidunt ac metus. Vivamus accumsan diam eget
                     ultricies auctor. Proin iaculis metus vel condimentum tincidunt.</p>
             </div>
-            <div class="col col-xl-6 service-card d-flex justify-content-center flex-column">
+            <div class="wow slideInRight col col-xl-6 service-card d-flex justify-content-center flex-column"
+                data-wow-delay=".7s">
                 <img src="./src/images/seasonal.svg" class="card-image" />
                 <div class="d-flex justify-content-sm-between align-items-end flex-column flex-sm-row">
                     <h4>Seasonal Maintenance</h4> <a href="#" class="link">Read More...</a>
@@ -214,7 +233,8 @@
                 <p>Vestibulum ligula sapien, cursus sed consectetur nec, tincidunt ac metus. Vivamus accumsan diam eget
                     ultricies auctor. Proin iaculis metus vel condimentum tincidunt.</p>
             </div>
-            <div class="col col-xl-6 service-card d-flex justify-content-center flex-column">
+            <div class="wow slideInLeft col col-xl-6 service-card d-flex justify-content-center flex-column"
+                data-wow-delay=".9s">
                 <img src="./src/images/sprinkler.svg" class="card-image" />
                 <div class="d-flex justify-content-sm-between align-items-end flex-column flex-sm-row">
                     <h4>Weater Features</h4> <a href="#" class="link">Read More...</a>
@@ -222,7 +242,8 @@
                 <p>Vestibulum ligula sapien, cursus sed consectetur nec, tincidunt ac metus. Vivamus accumsan diam eget
                     ultricies auctor. Proin iaculis metus vel condimentum tincidunt.</p>
             </div>
-            <div class="col col-xl-6 service-card d-flex justify-content-center flex-column">
+            <div class="wow slideInRight col col-xl-6 service-card d-flex justify-content-center flex-column"
+                data-wow-delay=".9s">
                 <img src="./src/images/gardener.svg" class="card-image" />
                 <div class="d-flex justify-content-sm-between align-items-end flex-column flex-sm-row">
                     <h4>Gardeners</h4> <a href="#" class="link">Read More...</a>
@@ -234,15 +255,18 @@
     </section>
 
     <section class="fifth-section container">
-        <h2>
-            <span>Pricing</span> Table
-        </h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. Nunc eget
-            congue ante. Vivamus ut volutpat tincidunt eget at felisioj,
-        </p>
+        <div class="wow zoomIn">
+            <h2>
+                <span>Pricing</span> Table
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. Nunc eget
+                congue ante. Vivamus ut volutpat tincidunt eget at felisioj,
+            </p>
+        </div>
+
         <div class="row row-cols-1 row-cols-sm-2 justify-content-around align-items-center plan-cards">
-            <div class="col plan-card standard">
+            <div class="wow bounceInDown col plan-card standard">
                 <div class="card-heading">
                     <p>Package 1</p>
                 </div>
@@ -262,7 +286,7 @@
                 </div>
             </div>
 
-            <div class="col plan-card premium">
+            <div class="wow bounceInUp col plan-card premium">
                 <div class="card-heading">
                     <p>Package 2</p>
                 </div>
@@ -286,7 +310,7 @@
     </section>
 
 
-    <section class="six-section container">
+    <section class="wow zoomIn six-section container">
         <h2>
             EverGreen <span>Gallery</span>
         </h2>
@@ -339,17 +363,19 @@
     </section>
 
     <section class="seventh-section container">
-        <h2>
-            Listen to what our <span>customers say</span>
-        </h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. Nunc eget
-            congue ante. Vivamus ut volutpat tincidunt eget at felisioj,
-        </p>
+        <div class="wow zoomIn">
+            <h2>
+                Listen to what our <span>customers say</span>
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. Nunc eget
+                congue ante. Vivamus ut volutpat tincidunt eget at felisioj,
+            </p>
+        </div>
 
         <div
             class="row row-cols-xl-3 row-cols-md-2 row-cols-1 justify-content-md-between customers justify-content-center">
-            <div class="col">
+            <div class="wow slideInLeft col" data-wow-delay=".7s">
                 <div class="customer-item">
                     <div class="heading d-flex align-items-end">
                         <img class="avatar" src="./src/images/avatar_6.png" />
@@ -367,7 +393,7 @@
 
                 </div>
             </div>
-            <div class="col">
+            <div class="wow slideInDown col" data-wow-delay=".7s">
                 <div class="customer-item">
                     <div class="heading d-flex align-items-end">
                         <img class="avatar" src="./src/images/avatar_7.png" />
@@ -384,7 +410,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col">
+            <div class="wow slideInRight col" data-wow-delay=".7s">
                 <div class="customer-item">
                     <div class="heading d-flex align-items-end">
                         <img class="avatar" src="./src/images/avatar_8.png" />
@@ -401,7 +427,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col">
+            <div class="wow slideInLeft col" data-wow-delay=".5s">
                 <div class="customer-item">
                     <div class="heading d-flex align-items-end">
                         <img class="avatar" src="./src/images/avatar_9.png" />
@@ -418,7 +444,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col">
+            <div class="wow slideInDown col" data-wow-delay=".5s">
                 <div class="customer-item">
                     <div class="heading d-flex align-items-end">
                         <img class="avatar" src="./src/images/avatar_01.png" />
@@ -435,7 +461,7 @@
                     </p>
                 </div>
             </div>
-            <div class="col">
+            <div class="wow slideInRight col" data-wow-delay=".5s">
                 <div class="customer-item">
                     <div class="heading d-flex align-items-end">
                         <img class="avatar" src="./src/images/avatar_02.png" />
@@ -456,15 +482,18 @@
     </section>
 
     <section class="eigth-section container ">
-        <h2>
-            <span>New Articles</span> and Knowledge
-        </h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. Nunc eget
-            congue ante. Vivamus ut volutpat tincidunt eget at felisioj,
-        </p>
+        <div class="wow zoomIn">
+            <h2>
+                <span>New Articles</span> and Knowledge
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. Nunc eget
+                congue ante. Vivamus ut volutpat tincidunt eget at felisioj,
+            </p>
+        </div>
+
         <div class="row row-cols-1 row-cols-md-3 news-list justify-content-between">
-            <div class="col post-item ">
+            <div class="wow zoomIn col post-item ">
                 <img class="thumb" src="./src/images/thumb-1.png" />
                 <div class="post-info">
                     <data>10 October 2024</data>
@@ -473,7 +502,7 @@
                     <a href="#" class="link">Read More...</a>
                 </div>
             </div>
-            <div class="col post-item ">
+            <div class="wow zoomIn col post-item " data-wow-delay=".3s">
                 <img class="thumb" src="./src/images/thumb-2.png" />
                 <div class="post-info">
                     <data>18 October 2024</data>
@@ -482,7 +511,7 @@
                     <a href="#" class="link">Read More...</a>
                 </div>
             </div>
-            <div class="col post-item">
+            <div class="wow zoomIn col post-item" data-wow-delay=".5s">
                 <img class="thumb" src="./src/images/thumb-3.png" />
                 <div class="post-info">
                     <data>29 October 2024</data>
@@ -617,8 +646,10 @@
 
         </div>
     </footer>
-
-    <script src=''></script>
+    <script src="./src/js/jquery-3.7.1.min.js"></script>
+    <script src='./src/js/bootstrap.min.js'></script>
+    <script src="./src/js/wow.js"></script>
+    <script src="./src/js/index.js"></script>
 </body>
 
 </html>
