@@ -5,6 +5,7 @@ import '@fontsource/dm-mono/500.css';
 import './styles/main.scss';
 import { interfaceText } from './data/content';
 import { projects } from './data/projects';
+import { initAnalytics, trackEvent } from './scripts/analytics';
 import { detectInitialLanguage, rememberLanguage } from './scripts/language';
 import { PROJECT_FILTERS, renderMain, renderProjectDialog, renderSidebar, type ProjectFilter } from './scripts/render';
 import { SUPPORTED_LANGUAGES, type Language } from './scripts/types';
@@ -51,6 +52,8 @@ function renderDialogContent(): void {
 function openProject(projectIndex: number): void {
   state.openProjectIndex = projectIndex;
   renderDialogContent();
+  const project = projects[projectIndex];
+  if (project) trackEvent('open_project', { project_title: project.title.en });
   if (!dialogElement!.open) {
     dialogElement!.showModal();
     document.body.classList.add('has-open-dialog');
@@ -80,8 +83,12 @@ document.addEventListener('click', (event) => {
     state.language = chosenLanguage as Language;
     rememberLanguage(state.language);
     renderPage();
+    trackEvent('change_language', { language: state.language });
     return;
   }
+
+  // GA4 enhanced measurement already reports PDF downloads and outbound links; mailto clicks it misses.
+  if (target.closest('a[href^="mailto:"]')) trackEvent('contact_click', { method: 'email' });
 
   const filterButton = target.closest<HTMLButtonElement>('[data-filter]');
   const chosenFilter = filterButton?.dataset.filter as ProjectFilter | undefined;
@@ -107,4 +114,5 @@ dialogElement.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowLeft') openProject((state.openProjectIndex - 1 + projects.length) % projects.length);
 });
 
+initAnalytics();
 renderPage();

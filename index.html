@@ -7,26 +7,68 @@
   <meta name="description" content="Custom WordPress themes and plugins, WooCommerce, multilingual &amp; RTL sites and React / Next.js products, with technical SEO and clean tracking.">
   <meta name="theme-color" content="#F3F2EE">
   <link rel="canonical" href="https://runo94.github.io/">
+  <link rel="alternate" hreflang="en" href="https://runo94.github.io/?lang=en">
+  <link rel="alternate" hreflang="uk" href="https://runo94.github.io/?lang=uk">
+  <link rel="alternate" hreflang="x-default" href="https://runo94.github.io/">
 
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Anton Kolesnykov">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="uk_UA">
   <meta property="og:url" content="https://runo94.github.io/">
   <meta property="og:title" content="Anton Kolesnykov — Senior WordPress &amp; Full-Stack Developer">
   <meta property="og:description" content="Custom WordPress themes, WooCommerce, multilingual sites and React / Next.js products.">
   <meta property="og:image" content="https://runo94.github.io/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Anton Kolesnykov — Senior WordPress &amp; Full-Stack Developer">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://runo94.github.io/images/og-image.jpg">
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23121212'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='20' fill='%23F3F2EE' text-anchor='middle'%3E/%3C/text%3E%3C/svg%3E">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Anton Kolesnykov",
-    "jobTitle": "Senior WordPress & Full-Stack Developer",
-    "url": "https://runo94.github.io/",
-    "image": "https://runo94.github.io/images/anton.jpg",
-    "address": { "@type": "PostalAddress", "addressCountry": "UA" },
-    "sameAs": ["https://github.com/runo94", "https://www.linkedin.com/in/anton-kolesnykov-79456b5a/"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://runo94.github.io/#website",
+        "url": "https://runo94.github.io/",
+        "name": "Anton Kolesnykov",
+        "inLanguage": ["en", "uk"],
+        "publisher": { "@id": "https://runo94.github.io/#person" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://runo94.github.io/#profile",
+        "url": "https://runo94.github.io/",
+        "name": "Anton Kolesnykov — Senior WordPress & Full-Stack Developer",
+        "isPartOf": { "@id": "https://runo94.github.io/#website" },
+        "primaryImageOfPage": "https://runo94.github.io/images/og-image.jpg",
+        "mainEntity": { "@id": "https://runo94.github.io/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://runo94.github.io/#person",
+        "name": "Anton Kolesnykov",
+        "jobTitle": "Senior WordPress & Full-Stack Developer",
+        "description": "Full-stack developer with 8+ years of experience: custom WordPress themes and plugins, WooCommerce, multilingual & RTL sites, React / Next.js products, technical SEO and analytics.",
+        "url": "https://runo94.github.io/",
+        "image": "https://runo94.github.io/images/anton.jpg",
+        "email": "mailto:runo1194@gmail.com",
+        "address": { "@type": "PostalAddress", "addressCountry": "UA" },
+        "knowsLanguage": ["uk", "en"],
+        "knowsAbout": ["WordPress", "Gutenberg", "ACF", "WooCommerce", "WPML", "PHP", "TypeScript", "React", "Next.js", "Node.js", "GraphQL", "Technical SEO", "Core Web Vitals", "Google Tag Manager"],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Full-Stack Web Developer",
+          "occupationLocation": { "@type": "Country", "name": "Ukraine" },
+          "skills": "WordPress, WooCommerce, PHP, TypeScript, React, Next.js, Node.js, technical SEO"
+        },
+        "sameAs": ["https://github.com/runo94", "https://www.linkedin.com/in/anton-kolesnykov-79456b5a/"]
+      }
+    ]
   }
   </script>
 </head>
