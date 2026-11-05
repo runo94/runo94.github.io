@@ -1,0 +1,166 @@
+@use 'sass:list';
+@use 'tokens' as *;
+@use 'sidebar';
+@use 'sections';
+@use 'dialog';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: $color-ground;
+  color: $color-ink;
+  font-family: $font-body;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  &.has-open-dialog {
+    overflow: hidden;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $color-ink;
+
+  &:hover {
+    color: $color-subtle;
+  }
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid $color-accent;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 999 1 560px;
+  min-width: 0;
+  padding: 28px 40px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+
+  @media (max-width: $breakpoint-phone) {
+    padding: 24px 16px 40px;
+    gap: 64px;
+  }
+}
+
+.eyebrow {
+  @include eyebrow;
+}
+
+.section-title {
+  @include display-heading;
+  font-size: 44px;
+  margin-bottom: 20px;
+
+  &--with-icon {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    font-size: 34px;
+  }
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: $radius-pill;
+  background: rgba(255, 255, 255, 0.88);
+  color: $color-ink;
+  font-family: $font-mono;
+  font-size: 11px;
+  line-height: 1.4;
+
+  &--outlined {
+    background: $color-surface;
+    border: 1px solid $color-line-soft;
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: $touch-target;
+  padding: 16px 28px;
+  border-radius: $radius-pill;
+  font-weight: 600;
+  text-decoration: none;
+
+  &--dark {
+    background: $color-ink;
+    color: $color-surface;
+
+    &:hover {
+      color: $color-surface;
+      background: $color-ink-soft;
+    }
+  }
+
+  &--outline {
+    border: 1.5px solid $color-ink;
+  }
+
+  &--small {
+    align-self: flex-start;
+    padding: 12px 16px;
+    border-radius: $radius-small;
+    font-size: 14px;
+  }
+}
+
+@each $shade in $manifesto-shades {
+  .shade-#{list.index($manifesto-shades, $shade)} {
+    color: $shade;
+  }
+}

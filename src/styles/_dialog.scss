@@ -1,0 +1,325 @@
+@use 'tokens' as *;
+
+.project-dialog {
+  width: min(980px, calc(100vw - 32px));
+  max-height: calc(100vh - 64px);
+  margin: 32px auto;
+  padding: 0;
+  border: 0;
+  border-radius: $radius-large;
+  background: $color-ground;
+  color: $color-ink;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+
+  &::backdrop {
+    background: rgba(18, 18, 18, 0.62);
+  }
+
+  // Firefox; Chromium/Safari use the ::-webkit-scrollbar rules below,
+  // since setting scrollbar-color there would disable them.
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-width: thin;
+    scrollbar-color: $color-line transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: $radius-large 0;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: $radius-pill;
+    background: $color-line padding-box;
+
+    &:hover {
+      background-color: $color-subtle;
+    }
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px 14px 24px;
+    border-bottom: 1px solid $color-line-soft;
+    background: $color-ground;
+  }
+
+  &__pills {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__position {
+    font-family: $font-mono;
+    font-size: 12px;
+    color: $color-subtle;
+  }
+
+  &__cover {
+    width: 100%;
+    border-bottom: 1px solid $color-line-soft;
+  }
+
+  &__placeholder {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__placeholder-mark {
+    font-family: $font-display;
+    font-weight: 800;
+    font-size: 72px;
+    letter-spacing: -0.04em;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 36px 36px 28px;
+
+    @media (max-width: $breakpoint-phone) {
+      padding: 24px 16px;
+    }
+  }
+
+  &__title {
+    @include display-heading;
+    font-size: clamp(30px, 4vw, 48px);
+  }
+
+  &__summary {
+    margin: -16px 0 0;
+    max-width: 720px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: $color-ink-soft;
+  }
+
+  &__columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  &__main {
+    flex: 2 1 420px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__aside {
+    flex: 1 1 240px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 4px 36px 36px;
+
+    @media (max-width: $breakpoint-phone) {
+      padding: 4px 16px 24px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid $color-line-soft;
+      background: $color-surface;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    border-top: 1px solid $color-line-soft;
+  }
+}
+
+.icon-button {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $touch-target;
+  height: $touch-target;
+  border: 0;
+  border-radius: 50%;
+  background: $color-ink;
+  color: $color-surface;
+}
+
+.highlights {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: highlight;
+  border-top: 1px solid $color-line;
+
+  li {
+    counter-increment: highlight;
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid $color-line;
+    font-size: 15px;
+
+    &::before {
+      content: counter(highlight, decimal-leading-zero);
+      min-width: 22px;
+      padding-top: 3px;
+      font-family: $font-mono;
+      font-size: 12px;
+      color: $color-subtle;
+    }
+  }
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: $color-accent;
+
+  .eyebrow {
+    color: $color-ink;
+    font-size: 12px;
+  }
+
+  strong {
+    font-family: $font-display;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+  }
+}
+
+.project-meta {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 15px;
+
+  dt {
+    font-family: $font-mono;
+    font-size: 12px;
+    color: $color-subtle;
+  }
+
+  dd {
+    margin: 4px 0 0;
+    font-weight: 600;
+  }
+}
+
+.chips {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  padding: 6px 12px;
+  border-radius: $radius-pill;
+  background: $color-surface;
+  border: 1px solid $color-line-soft;
+  font-size: 13px;
+}
+
+.nda-note {
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: $radius-medium;
+  background: $color-surface;
+  border: 1px solid $color-line-soft;
+  font-size: 13px;
+  color: $color-muted;
+
+  svg {
+    flex: 0 0 auto;
+    margin-top: 1px;
+  }
+}
+
+.pager {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 48%;
+  min-height: $touch-target;
+  padding: 10px 14px;
+  border-radius: $radius-medium;
+  border: 1px solid $color-line;
+  background: $color-surface;
+  text-align: left;
+
+  &--next {
+    align-items: flex-end;
+    text-align: right;
+    border-color: $color-ink;
+    background: $color-ink;
+    color: $color-surface;
+
+    .pager__label {
+      color: $color-ink-on-dark;
+    }
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: $font-mono;
+    font-size: 11px;
+    color: $color-subtle;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 14px;
+  }
+}

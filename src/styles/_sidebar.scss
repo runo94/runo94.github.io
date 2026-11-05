@@ -1,0 +1,208 @@
+@use 'tokens' as *;
+
+.sidebar {
+  flex: 1 1 340px;
+  max-width: $sidebar-max-width;
+  padding: 24px 32px 28px;
+  border-right: 1px solid $color-line-soft;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  @media (min-width: $breakpoint-sticky-sidebar) {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  @media (max-width: $breakpoint-sticky-sidebar - 1px) {
+    max-width: none;
+    border-right: 0;
+    border-bottom: 1px solid $color-line-soft;
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    padding: 20px 16px 24px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__name {
+    @include display-heading;
+    font-size: 36px;
+  }
+
+  &__links {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: $font-mono;
+    font-size: 13px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: $font-display;
+  font-weight: 800;
+  font-size: 20px;
+
+  &__mark {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    border-radius: $radius-small;
+    background: $color-ink;
+    color: $color-ground;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.language-switch {
+  display: flex;
+  padding: 3px;
+  background: $color-surface;
+  border: 1px solid $color-line-soft;
+  border-radius: $radius-pill;
+  font-family: $font-mono;
+  font-size: 13px;
+
+  &__button {
+    min-width: $touch-target;
+    min-height: 36px;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: $radius-pill;
+    background: transparent;
+
+    &.is-active {
+      background: $color-ink;
+      color: $color-surface;
+    }
+  }
+}
+
+.portrait {
+  position: relative;
+  margin: 0;
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 50% 28%;
+    border-radius: 24px;
+  }
+
+  &__status {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: $color-surface;
+    border-radius: $radius-pill;
+    font-family: $font-mono;
+    font-size: 12px;
+  }
+
+  &__sticker {
+    position: absolute;
+    right: -6px;
+    bottom: 18px;
+    transform: rotate(4deg);
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: $color-accent;
+    font-family: $font-display;
+    font-weight: 800;
+    font-size: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $color-success;
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid $color-line;
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 0;
+    border-bottom: 1px solid $color-line;
+    text-decoration: none;
+    font-family: $font-display;
+    font-weight: 600;
+    font-size: 21px;
+
+    &:hover .side-nav__arrow {
+      transform: translateX(4px);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__count {
+    font-family: $font-mono;
+    font-size: 12px;
+    color: $color-subtle;
+  }
+
+  &__arrow {
+    transition: transform 0.2s ease;
+  }
+}
+
+.cv-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 48px;
+  padding: 14px 18px;
+  border-radius: $radius-medium;
+  background: $color-ink;
+  color: $color-surface;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    color: $color-surface;
+    background: $color-ink-soft;
+  }
+
+  &__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: $font-mono;
+    font-size: 12px;
+    color: $color-ink-on-dark;
+  }
+}

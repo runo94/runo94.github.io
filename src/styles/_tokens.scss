@@ -1,0 +1,46 @@
+// Design tokens — colours, type and spacing used across the site.
+
+$color-ground: #f3f2ee;
+$color-surface: #ffffff;
+$color-ink: #121212;
+$color-ink-soft: #2e2e2b;
+$color-muted: #4a4a46;
+$color-subtle: #5a5a55;
+$color-line: #d6d3c8;
+$color-line-soft: #e2e0d8;
+$color-accent: #ff7a45;
+$color-ink-on-dark: #c9c7be;
+$color-success: #1f9d55;
+$manifesto-shades: (#121212, #2e2e2b, #4a4a46, #6a6a64);
+
+// Self-hosted through Fontsource packages (imported in src/main.ts).
+$font-display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+$font-body: 'Inter Variable', system-ui, sans-serif;
+$font-mono: 'DM Mono', ui-monospace, monospace;
+
+$radius-small: 10px;
+$radius-medium: 14px;
+$radius-card: 20px;
+$radius-large: 28px;
+$radius-pill: 999px;
+
+$sidebar-max-width: 440px;
+$breakpoint-sticky-sidebar: 960px;
+$breakpoint-phone: 600px;
+$touch-target: 44px;
+
+@mixin eyebrow {
+  margin: 0;
+  font-family: $font-mono;
+  font-weight: 500;
+  font-size: 13px;
+  color: $color-subtle;
+}
+
+@mixin display-heading {
+  margin: 0;
+  font-family: $font-display;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
