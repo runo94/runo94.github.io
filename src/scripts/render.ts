@@ -37,7 +37,7 @@ export function renderSidebar(language: Language, projectCount: number): string 
     </div>
 
     <figure class="portrait">
-      <img src="/images/anton.jpg" width="900" height="900" alt="${text('photoAlt', language)}" class="portrait__image">
+      <img src="/images/anton.webp" width="900" height="900" alt="${text('photoAlt', language)}" fetchpriority="high" class="portrait__image">
       <span class="portrait__status"><span class="status-dot" aria-hidden="true"></span>${text('openToWork', language)}</span>
       <span class="portrait__sticker">${text('yearsSticker', language)}</span>
     </figure>

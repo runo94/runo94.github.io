@@ -83,23 +83,23 @@ export const projects: Project[] = [
     stack: ['WordPress', 'PHP', 'ACF', 'JavaScript', 'Canvas API', 'GTM', 'Schema'],
     isConfidential: true,
     cover: {
-      tile: '/images/projects/agency-tile.jpg',
-      full: '/images/projects/agency.jpg',
+      tile: '/images/projects/agency-tile.webp',
+      full: '/images/projects/agency.webp',
       aspectRatio: '1200 / 603',
       alt: { en: 'Hero section of a Shopify growth agency website', uk: 'Головний екран сайту агенції Shopify-маркетингу' },
     },
     placeholder: { background: '#0B0B0D', ink: '#F3F2EE', mark: 'Agency' },
     gallery: [
       {
-        src: '/images/gallery/agency-gallery-speed.jpg',
+        src: '/images/gallery/agency-gallery-speed.webp',
         alt: { en: 'Solutions section with an animated store-speed widget', uk: 'Блок рішень з анімованим віджетом швидкості магазину' },
       },
       {
-        src: '/images/gallery/agency-gallery-cases.jpg',
+        src: '/images/gallery/agency-gallery-cases.webp',
         alt: { en: 'Success stories section with a case switcher and a traffic chart', uk: 'Блок кейсів з перемикачем і графіком трафіку' },
       },
       {
-        src: '/images/gallery/agency-gallery-process.jpg',
+        src: '/images/gallery/agency-gallery-process.webp',
         alt: { en: 'Five-step process section with an animated timeline', uk: 'Блок процесу з п’яти кроків із анімованою шкалою' },
       },
     ],
@@ -137,19 +137,19 @@ export const projects: Project[] = [
     stack: ['[stack]'],
     isConfidential: true,
     cover: {
-      tile: '/images/projects/tutoring-tile.jpg',
-      full: '/images/projects/tutoring.jpg',
+      tile: '/images/projects/tutoring-tile.webp',
+      full: '/images/projects/tutoring.webp',
       aspectRatio: '1200 / 634',
       alt: { en: 'Hero section of a tutoring marketplace website', uk: 'Головний екран сайту платформи репетиторів' },
     },
     placeholder: { background: '#FFC94D', ink: '#121212', mark: 'Tutors' },
     gallery: [
       {
-        src: '/images/gallery/tutoring-gallery-subjects.jpg',
+        src: '/images/gallery/tutoring-gallery-subjects.webp',
         alt: { en: 'Subject picker that starts the matching flow', uk: 'Вибір предмета, з якого починається підбір' },
       },
       {
-        src: '/images/gallery/tutoring-gallery-journey.jpg',
+        src: '/images/gallery/tutoring-gallery-journey.webp',
         alt: { en: 'Tutoring journey section with three feature cards', uk: 'Блок «шлях навчання» з трьома картками' },
       },
     ],
@@ -177,19 +177,19 @@ export const projects: Project[] = [
     stack: ['WordPress', 'Elementor'],
     isConfidential: true,
     cover: {
-      tile: '/images/projects/recovery-tile.jpg',
-      full: '/images/projects/recovery.jpg',
+      tile: '/images/projects/recovery-tile.webp',
+      full: '/images/projects/recovery.webp',
       aspectRatio: '1200 / 602',
       alt: { en: 'Hero section of a recovery center website', uk: 'Головний екран сайту реабілітаційного центру' },
     },
     placeholder: { background: '#1A1A22', ink: '#F3F2EE', mark: 'Care' },
     gallery: [
       {
-        src: '/images/gallery/recovery-gallery-benefits.jpg',
+        src: '/images/gallery/recovery-gallery-benefits.webp',
         alt: { en: 'Benefits section with six feature cards', uk: 'Блок переваг із шістьма картками' },
       },
       {
-        src: '/images/gallery/recovery-gallery-steps.jpg',
+        src: '/images/gallery/recovery-gallery-steps.webp',
         alt: { en: 'Five-step “how to get started” section', uk: 'Блок «як почати» з п’ятьма кроками' },
       },
     ],
@@ -256,19 +256,19 @@ export const projects: Project[] = [
     stack: ['WordPress', 'Gutenberg', 'PHP', 'JavaScript', 'Sass'],
     isConfidential: true,
     cover: {
-      tile: '/images/projects/watch-tile.jpg',
-      full: '/images/projects/watch.jpg',
+      tile: '/images/projects/watch-tile.webp',
+      full: '/images/projects/watch.webp',
       aspectRatio: '1200 / 550',
       alt: { en: 'Home screen of a luxury watch certification platform', uk: 'Головний екран платформи сертифікації дорогих годинників' },
     },
     placeholder: { background: '#F6F5F2', ink: '#121212', mark: 'Watch ID' },
     gallery: [
       {
-        src: '/images/gallery/watch-gallery-certificates.jpg',
+        src: '/images/gallery/watch-gallery-certificates.webp',
         alt: { en: 'Certificates dashboard with filters, search and a paginated table', uk: 'Кабінет сертифікатів з фільтрами, пошуком і таблицею з пагінацією' },
       },
       {
-        src: '/images/gallery/watch-gallery-benefits.jpg',
+        src: '/images/gallery/watch-gallery-benefits.webp',
         alt: { en: 'Benefits section of the landing page', uk: 'Блок переваг на лендінгу' },
       },
     ],

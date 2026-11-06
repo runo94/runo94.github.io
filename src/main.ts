@@ -114,5 +114,12 @@ dialogElement.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowLeft') openProject((state.openProjectIndex - 1 + projects.length) % projects.length);
 });
 
-initAnalytics();
-renderPage();
+// Production HTML ships pre-rendered in English (see vite.config.ts); re-rendering the same markup
+// would swap the portrait for a new <img> and push LCP back, so only render on a language mismatch.
+const isPrerendered = sidebarElement.hasChildNodes() && document.documentElement.lang === state.language;
+if (isPrerendered) updateDocumentMeta();
+else renderPage();
+
+// Analytics waits for the page to finish loading so it never competes with first paint.
+if (document.readyState === 'complete') initAnalytics();
+else window.addEventListener('load', initAnalytics, { once: true });
